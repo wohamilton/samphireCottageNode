@@ -1,0 +1,39 @@
+extends layout
+
+block content
+  h1= title
+  form#enterdetails(name="enterdetails",method="post",action="/generateresponse")
+    table.table
+      tr
+        td Template:   
+        td
+          select#templateDropdown.form-control(form="enterdetails")
+            option(value="shortStay") Short Stay
+            option(value="longStay") Long Stay
+      tr
+        td Customer Name:
+        td
+          input#customerName.form-control(type="text", placeholder="customerName", name="customerName")
+      tr
+        td From Date:
+        td
+          input#fromDate.form-control(type="date", placeholder="fromDate", name="fromDate")
+       tr
+        td To Date:
+        td
+          input#toDate.form-control(type="date", placeholder="toDate", name="toDate")
+      tr
+        td Cost:
+        td
+          input#cost.form-control(type="text", placeholder="cost", name="cost")
+      tr
+        td Responder:
+        td
+          input#responder.form-control(type="text", placeholder="responder", name="responder")
+    div.pull-right
+      button#btnSubmit(type="submit", class="btn btn-primary") Submit
+
+  select#newDropdown.form-control(form="enterdetails")
+    option(value="a") A
+    option(value="b") B
+
