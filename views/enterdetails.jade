@@ -7,9 +7,9 @@ block content
       tr
         td Template:   
         td
-          select#templateDropdown.form-control(form="enterdetails")
-            option(value="shortStay") Short Stay
-            option(value="longStay") Long Stay
+          select#templateDropdown.form-control(name="template")
+            each val in templateOptions.templates
+              option(value=val.name)= val.name
       tr
         td Customer Name:
         td
@@ -32,8 +32,3 @@ block content
           input#responder.form-control(type="text", placeholder="responder", name="responder")
     div.pull-right
       button#btnSubmit(type="submit", class="btn btn-primary") Submit
-
-  select#newDropdown.form-control(form="enterdetails")
-    option(value="a") A
-    option(value="b") B
-
